@@ -201,6 +201,8 @@ function setup() {
 }
 
 function draw() {
+  mobile = true;
+  
   // Very beginning screen
   if(click && click2){
     sleep(2000);
@@ -212,7 +214,7 @@ function draw() {
 
     // Game screen
   } else if(click2 == false && click == false) {
-
+    mobile = true;
     // Set up the game with score, background, and level
     imageMode(CENTER);
     image(spacebackground, width/2, height/2, width, height);
@@ -746,6 +748,7 @@ function start(){
   piecutter = [];
   pizzaorder = 1;
   level = 1;
+  mobile = true;
 }
 
 
