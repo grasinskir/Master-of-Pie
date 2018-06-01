@@ -69,15 +69,6 @@ body {
     }
 }
 
-@media (orientation: portrait) {
-.playfield { display: block; }
-.overlay { display: none; }
-}
-@media (orientation: landscape) {
-.playfield { display: none; }
-.overlay { display: block; }
-}
-
 h1 {
     font-size:24px;
     font-weight:normal;
