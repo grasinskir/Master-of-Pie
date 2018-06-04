@@ -202,7 +202,7 @@ function setup() {
 
 function draw() {
   mobile = true;
-  
+
   // Very beginning screen
   if(click && click2){
     sleep(2000);
