@@ -196,12 +196,13 @@ class Spiky{
 
 function setup() {
   // Create the canvas and set a text size
-  createCanvas(windowWidth, windowHeight);
+  // createCanvas(windowWidth, windowHeight);
   textSize(15);
 }
 
 function draw() {
   mobile = true;
+  createCanvas(windowWidth, windowHeight);
 
   // Very beginning screen
   if(click && click2){
