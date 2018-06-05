@@ -196,24 +196,25 @@ class Spiky{
 
 function setup() {
   // Create the canvas and set a text size
-  createCanvas(windowWidth, windowHeight);
+  // createCanvas(windowWidth, windowHeight);
   textSize(15);
 }
 
 function draw() {
   mobile = true;
+  createCanvas(windowWidth, windowHeight);
 
   // Very beginning screen
-  if(click && click2){
+  if(click /*&& click2*/){
     sleep(2000);
     start();
 
     // Instructions screen
-  } else if(click2 && click == false) {
-    instructions();
+  // } else if(click2 && click == false) {
+  //   instructions();
 
     // Game screen
-  } else if(click2 == false && click == false) {
+  } else if(/*click2 == false &&*/ click == false) {
     mobile = true;
     // Set up the game with score, background, and level
     imageMode(CENTER);
@@ -734,6 +735,7 @@ function start(){
   fill(255);
   text("Master of Pie", width/2 - width/20, height/4);
   text("Start", width/2 - width/75, height/2);
+  text("(Landscape Orientation Preferred)", width/2 - width/10, height/4 + height/14);
   // Pizzas array is cleared
   pizzas = [];
   // Creates the ship

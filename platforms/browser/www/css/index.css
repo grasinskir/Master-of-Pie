@@ -114,7 +114,7 @@ h1 {
     -webkit-animation:fade 3000ms infinite;
 }
 
-#container { display:block; }
+/*#container { display:block; }
 
 @media only screen and (orientation:portrait){
 
@@ -152,4 +152,4 @@ h1 {
 
   }
 
-}
+}*/
