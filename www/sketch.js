@@ -262,21 +262,21 @@ function draw() {
     }
 
     // If on computer use keyboard keys W, A, D, F, and Spacebar
-    if(mobile == false){
-      if(keyIsDown(65)){
-        ship.heading -= 5;
-      }
-      if(keyIsDown(68)){
-        ship.heading += 5;
-      }
-      if(keyIsDown(87)){
-        ship.yVelocity += ship.yacceleration;
-        ship.xVelocity += ship.xacceleration;
-      }
-    }
+    // if(mobile == false){
+    //   if(keyIsDown(65)){
+    //     ship.heading -= 5;
+    //   }
+    //   if(keyIsDown(68)){
+    //     ship.heading += 5;
+    //   }
+    //   if(keyIsDown(87)){
+    //     ship.yVelocity += ship.yacceleration;
+    //     ship.xVelocity += ship.xacceleration;
+    //   }
+    // }
 
     // Slow the ship in the positive y if either the mouse is pressed or W is down
-    if(ship.yVelocity < 0 && !mouseIsPressed && !keyIsDown(87)){
+    if(ship.yVelocity < 0 && !mouseIsPressed /*&& !keyIsDown(87)*/){
       ship.yVelocity += abs(ship.yacceleration);
 
       // If the y velocity is close to 0, the ship stops
@@ -288,7 +288,7 @@ function draw() {
     }
 
     // Slow the ship in the negative y if either the mouse is pressed or W is down
-    if(ship.yVelocity > 0 && !mouseIsPressed && !keyIsDown(87)){
+    if(ship.yVelocity > 0 && !mouseIsPressed /*&& !keyIsDown(87)*/){
       ship.yVelocity -= abs(ship.yacceleration);
 
       // If the y velocity is close to 0, the ship stops
@@ -300,7 +300,7 @@ function draw() {
     }
 
     // Slow the ship in the negative x if either the mouse is pressed or W is down
-    if(ship.xVelocity > 0 && !mouseIsPressed && !keyIsDown(87)){
+    if(ship.xVelocity > 0 && !mouseIsPressed /*&& !keyIsDown(87)*/){
       ship.xVelocity -= abs(ship.xacceleration);
 
       // If the x velocity is close to 0, the ship stops
@@ -312,7 +312,7 @@ function draw() {
     }
 
     // Accelerate the ship in the positive x if either the mouse is pressed or W is down
-    if(ship.xVelocity < 0 && !mouseIsPressed && !keyIsDown(87)){
+    if(ship.xVelocity < 0 && !mouseIsPressed /*&& !keyIsDown(87)*/){
       ship.xVelocity += abs(ship.xacceleration);
 
       // If the x velocity is close to 0, the ship stops
@@ -623,39 +623,39 @@ function mousePressed(){
 }
 
 
-function keyTyped(){
-  // Make sure people don't break game by setting a limit on bullets
-  if(reload > 0){
-    // When on computer
-    if(mobile == false){
-      // The Spacebar creates a new bullet
-      if(keyCode === 32){
-        bullets.push(new Projectile(ship.x1, ship.y1, ship.heading));
-        for(i = 0; i < bullets.length; i++){
-          bullets[i].makeBullet();
-          bullets[i].moveBullet();
-        }
-        reload--;
-      }
-    }
-  }
-
-  // If bullets are at 0 have to wait 2 seconds to reload
-  if(reload <= 0){
-    setTimeout(reloadMechanics, 2000);
-  }
-
-  // F key causes the ship to disappear and then reappear at a random position, have to wait 1 second before clicking again
-  if(keyIsDown(70) && click3 == true){
-    hyper = true;
-    ship.x1 = -width;
-    ship.y1 = -height;
-    ship.xVelocity = 0;
-    ship.yVelocity = 0;
-    click3 = false;
-    setTimeout(hyperspace, 1000);
-  }
-}
+// function keyTyped(){
+//   // Make sure people don't break game by setting a limit on bullets
+//   if(reload > 0){
+//     // When on computer
+//     if(mobile == false){
+//       // The Spacebar creates a new bullet
+//       if(keyCode === 32){
+//         bullets.push(new Projectile(ship.x1, ship.y1, ship.heading));
+//         for(i = 0; i < bullets.length; i++){
+//           bullets[i].makeBullet();
+//           bullets[i].moveBullet();
+//         }
+//         reload--;
+//       }
+//     }
+//   }
+//
+//   // If bullets are at 0 have to wait 2 seconds to reload
+//   if(reload <= 0){
+//     setTimeout(reloadMechanics, 2000);
+//   }
+//
+//   // F key causes the ship to disappear and then reappear at a random position, have to wait 1 second before clicking again
+//   if(keyIsDown(70) && click3 == true){
+//     hyper = true;
+//     ship.x1 = -width;
+//     ship.y1 = -height;
+//     ship.xVelocity = 0;
+//     ship.yVelocity = 0;
+//     click3 = false;
+//     setTimeout(hyperspace, 1000);
+//   }
+// }
 
 
 // Creates buttons for moving the ship and shooting
