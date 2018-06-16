@@ -352,33 +352,33 @@ function draw() {
     }
 
     // Collision rule between pizzas/asteroids and bullets/blueberries
-    for(j = 0; j < pizzas.length; j++){
-      for(i = 0; i < bullets.length; i++){
-        console.log("p.l = " + pizzas.length + "j = " + j);
-        // Collisions for the large and medium pizzas
-        // let distance1 = dist(pizzas[j].x, pizzas[j].y, bullets[i].x, bullets[i].y);
-        // if(distance1 <= pizzas[j].r/2 && pizzas[j].r <= width/40){
-        //   piecutter.push(new Spiky(pizzas[j].x, pizzas[j].y));
-        //
-        //   i--;
-        //   // Add points if hit
-        //   score++;
-        //   // Makes sure game doesn't break when both the ship and bullet hit a pizza at the same time
-        //   hit = true;
-        //   // Splice out the pizza and bullet
-        //   pizzas.splice(j,1);
-        //
-        //   bullets.splice(i,1);
-        //
-        // }if(pizzas.length == 0){
-        //   i = bullets.length + 1;
-        // }
-      }
-    }
+    // for(j = 0; j < pizzas.length; j++){
+    //   for(i = 0; i < bullets.length; i++){
+    //     console.log("p.l = " + pizzas.length + "j = " + j);
+    //     // Collisions for the large and medium pizzas
+    //     // let distance1 = dist(pizzas[j].x, pizzas[j].y, bullets[i].x, bullets[i].y);
+    //     // if(distance1 <= pizzas[j].r/2 && pizzas[j].r <= width/40){
+    //     //   piecutter.push(new Spiky(pizzas[j].x, pizzas[j].y));
+    //     //
+    //     //   i--;
+    //     //   // Add points if hit
+    //     //   score++;
+    //     //   // Makes sure game doesn't break when both the ship and bullet hit a pizza at the same time
+    //     //   hit = true;
+    //     //   // Splice out the pizza and bullet
+    //     //   pizzas.splice(j,1);
+    //     //
+    //     //   bullets.splice(i,1);
+    //     //
+    //     // }if(pizzas.length == 0){
+    //     //   i = bullets.length + 1;
+    //     // }
+    //   }
+    // }
 
-    for(j = 0; j < pizzas.length; j++){
-      for(i = 0; i < bullets.length; i++){
-        let distance1 = dist(pizzas[j].x, pizzas[j].y, bullets[i].x, bullets[i].y);
+    // for(j = 0; j < pizzas.length; j++){
+    //   for(i = 0; i < bullets.length; i++){
+    //     let distance1 = dist(pizzas[j].x, pizzas[j].y, bullets[i].x, bullets[i].y);
         //  if(distance1 <= pizzas[j].r/2 && pizzas[j].r > width/40){
         //   // Move opposite
         //   pizzas[j].xVelocity *= -1;
@@ -410,31 +410,31 @@ function draw() {
         //
         //
         // }
-        if(distance1 <= pizzas[j].r/2 /*&& pizzas[j].r <= width/40*/){
-          piecutter.push(new Spiky(pizzas[j].x, pizzas[j].y));
-
-
-          // Add points if hit
-          score++;
-          // Makes sure game doesn't break when both the ship and bullet hit a pizza at the same time
-          hit = true;
-          // Splice out the pizza and bullet
-          pizzas.splice(j,1);
-
-          bullets.splice(i,1);
-          i--;
-          // if(pizzas.length < 1){
-          //   j = pizzas.length;
-          //   console.log(pizzas.length);
-          // }
-          break;
-        }
-        if(pizzas.length < 1){
-          break;
-        }
-        if(bullets.length < 1){
-          break;
-        }
+        // if(distance1 <= pizzas[j].r/2 /*&& pizzas[j].r <= width/40*/){
+        //   piecutter.push(new Spiky(pizzas[j].x, pizzas[j].y));
+        //
+        //
+        //   // Add points if hit
+        //   score++;
+        //   // Makes sure game doesn't break when both the ship and bullet hit a pizza at the same time
+        //   hit = true;
+        //   // Splice out the pizza and bullet
+        //   pizzas.splice(j,1);
+        //
+        //   bullets.splice(i,1);
+        //   i--;
+        //   // if(pizzas.length < 1){
+        //   //   j = pizzas.length;
+        //   //   console.log(pizzas.length);
+        //   // }
+        //   break;
+        // }
+        // if(pizzas.length < 1){
+        //   break;
+        // }
+        // if(bullets.length < 1){
+        //   break;
+        // }
         // if(pizzas[j].x === undefined){
         //   break;
         // }
@@ -460,8 +460,8 @@ function draw() {
         //
         //
         // }
-      }
-    }
+    //   }
+    // }
 
     // If on the last pizza begin next level
     if(pizzas.length < 1){
@@ -469,47 +469,47 @@ function draw() {
     }
 
     // Collisions between ship and pizzas/asteroids
-    for(j = 0; j < pizzas.length; j++){
-      // Tip of the ship
-      let distance2 = dist(pizzas[j].x, pizzas[j].y, ship.x1, ship.y1 - width/70);
-      // Left corner of the ship
-      let distance3 = dist(pizzas[j].x, pizzas[j].y, ship.x1 - width/110, ship.y1 + width/70);
-      // Right corner of the ship
-      let distance4 = dist(pizzas[j].x, pizzas[j].y, ship.x1 + width/110, ship.y1 + width/70);
-      // Collision
-      if(distance2 <= pizzas[j].r/4 || distance3 <= pizzas[j].r/4 || distance4 <= pizzas[j].r/4){
-        // Go to end
-        end = true;
-        score = 0;
-        // Makes sure game doesn't break when both the ship and bullet hit a pizza at the same time
-        crash = true;
-      }
-    }
+    // for(j = 0; j < pizzas.length; j++){
+    //   // Tip of the ship
+    //   let distance2 = dist(pizzas[j].x, pizzas[j].y, ship.x1, ship.y1 - width/70);
+    //   // Left corner of the ship
+    //   let distance3 = dist(pizzas[j].x, pizzas[j].y, ship.x1 - width/110, ship.y1 + width/70);
+    //   // Right corner of the ship
+    //   let distance4 = dist(pizzas[j].x, pizzas[j].y, ship.x1 + width/110, ship.y1 + width/70);
+    //   // Collision
+    //   if(distance2 <= pizzas[j].r/4 || distance3 <= pizzas[j].r/4 || distance4 <= pizzas[j].r/4){
+    //     // Go to end
+    //     end = true;
+    //     score = 0;
+    //     // Makes sure game doesn't break when both the ship and bullet hit a pizza at the same time
+    //     crash = true;
+    //   }
+    // }
 
-    for(j = 0; j < piecutter.length; j++){
-      // Tip of the ship
-      let distance21 = dist(piecutter[j].x, piecutter[j].y - piecutter[j].height, ship.x1, ship.y1 - width/70);
-      let distance31 = dist(piecutter[j].x - piecutter[j].width, piecutter[j].y + piecutter[j].height, ship.x1, ship.y1 - width/70);
-      let distance41 = dist(piecutter[j].x + piecutter[j].width, piecutter[j].y + piecutter[j].height, ship.x1, ship.y1 - width/70);
-      // Left corner of the ship
-      let distance22 = dist(piecutter[j].x, piecutter[j].y - piecutter[j].height, ship.x1 - width/110, ship.y1 + width/70);
-      let distance32 = dist(piecutter[j].x - piecutter[j].width, piecutter[j].y + piecutter[j].height, ship.x1 - width/110, ship.y1 + width/70);
-      let distance42 = dist(piecutter[j].x + piecutter[j].width, piecutter[j].y + piecutter[j].height, ship.x1 - width/110, ship.y1 + width/70);
-      // Right corner of the ship
-      let distance23 = dist(piecutter[j].x, piecutter[j].y - piecutter[j].height, ship.x1 + width/110, ship.y1 + width/70);
-      let distance33 = dist(piecutter[j].x - piecutter[j].width, piecutter[j].y + piecutter[j].height, ship.x1 + width/110, ship.y1 + width/70);
-      let distance43 = dist(piecutter[j].x + piecutter[j].width, piecutter[j].y + piecutter[j].height, ship.x1 + width/110, ship.y1 + width/70);
-      // Collision
-      if(distance21 <= piecutter[j].width || distance31 <= piecutter[j].width || distance41 <= piecutter[j].width ||
-        distance22 <= piecutter[j].width || distance32 <= piecutter[j].width || distance42 <= piecutter[j].width ||
-        distance23 <= piecutter[j].width || distance33 <= piecutter[j].width || distance43 <= piecutter[j].width){
-        // Go to end
-        end = true;
-        score = 0;
-        // Makes sure game doesn't break when both the ship and bullet hit a pizza at the same time
-        crash = true;
-      }
-    }
+    // for(j = 0; j < piecutter.length; j++){
+    //   // Tip of the ship
+    //   let distance21 = dist(piecutter[j].x, piecutter[j].y - piecutter[j].height, ship.x1, ship.y1 - width/70);
+    //   let distance31 = dist(piecutter[j].x - piecutter[j].width, piecutter[j].y + piecutter[j].height, ship.x1, ship.y1 - width/70);
+    //   let distance41 = dist(piecutter[j].x + piecutter[j].width, piecutter[j].y + piecutter[j].height, ship.x1, ship.y1 - width/70);
+    //   // Left corner of the ship
+    //   let distance22 = dist(piecutter[j].x, piecutter[j].y - piecutter[j].height, ship.x1 - width/110, ship.y1 + width/70);
+    //   let distance32 = dist(piecutter[j].x - piecutter[j].width, piecutter[j].y + piecutter[j].height, ship.x1 - width/110, ship.y1 + width/70);
+    //   let distance42 = dist(piecutter[j].x + piecutter[j].width, piecutter[j].y + piecutter[j].height, ship.x1 - width/110, ship.y1 + width/70);
+    //   // Right corner of the ship
+    //   let distance23 = dist(piecutter[j].x, piecutter[j].y - piecutter[j].height, ship.x1 + width/110, ship.y1 + width/70);
+    //   let distance33 = dist(piecutter[j].x - piecutter[j].width, piecutter[j].y + piecutter[j].height, ship.x1 + width/110, ship.y1 + width/70);
+    //   let distance43 = dist(piecutter[j].x + piecutter[j].width, piecutter[j].y + piecutter[j].height, ship.x1 + width/110, ship.y1 + width/70);
+    //   // Collision
+    //   if(distance21 <= piecutter[j].width || distance31 <= piecutter[j].width || distance41 <= piecutter[j].width ||
+    //     distance22 <= piecutter[j].width || distance32 <= piecutter[j].width || distance42 <= piecutter[j].width ||
+    //     distance23 <= piecutter[j].width || distance33 <= piecutter[j].width || distance43 <= piecutter[j].width){
+    //     // Go to end
+    //     end = true;
+    //     score = 0;
+    //     // Makes sure game doesn't break when both the ship and bullet hit a pizza at the same time
+    //     crash = true;
+    //   }
+    // }
 
     // Splice out the bullet that goes offscreen
     for(i = 0; i < bullets.length; i++){
